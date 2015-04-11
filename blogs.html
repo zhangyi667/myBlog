@@ -1,14 +1,11 @@
 ---
-layout: page
+layout: blog
 title: Blogs
 permalink: /blog/
 ---
-
-<div class="home">
-
-  <h1 class="page-heading">Posts</h1>
-
-  <ul class="post-list">
+<div id="main">
+  <div class="container">
+    <ul class="post-list">
     {% for post in site.posts %}
       <li>
         <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
@@ -19,6 +16,5 @@ permalink: /blog/
       </li>
     {% endfor %}
   </ul>
-
-
+  </div>
 </div>
