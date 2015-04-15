@@ -313,6 +313,7 @@ pre {
 .shortcut{
   border-bottom: dotted 1px rgba(128,128,128,0.5);
   font-size: 16px;
+  font-family: monospace;
 
 }
 /**

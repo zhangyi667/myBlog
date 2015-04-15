@@ -3,7 +3,7 @@ layout: post
 title:  "What happened when doing Java Cipher Encryption"
 date:   2015-02-17 18:30:46
 categories: work
-shortcut: SecureRandom rnd = new SecureRandom()...
+shortcut: This article tells what happened when java does cipher enc...
 ---
 What happened when you do the Java Encryption?
 
