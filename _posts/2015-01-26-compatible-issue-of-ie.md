@@ -3,6 +3,7 @@ layout: post
 title:  "Compatible Issue of IE on ExtJs"
 date:   2015-01-26 08:30:46
 categories: work
+shortcut: Here is a compatible issue of IE on ExtJs projects....
 ---
 Here is a compatible issue of IE on ExtJs projects that I've found during work.
 

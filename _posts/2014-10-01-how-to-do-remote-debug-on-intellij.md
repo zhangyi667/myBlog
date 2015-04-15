@@ -3,8 +3,8 @@ layout: post
 title:  "How to do remote-debug on IntelliJ"
 date:   2014-10-01 18:30:46
 categories: work
+shortcut: When doing remote debugging in IntelliJ, you should add a new debug configuration `remote`, which...
 ---
-
 Remote debugging:
 When doing remote debugging in IntelliJ, you should add a new debug configuration `remote`, which would automatically fill blanks with:
 

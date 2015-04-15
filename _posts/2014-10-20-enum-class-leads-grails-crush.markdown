@@ -3,6 +3,7 @@ layout: post
 title:  "Enum Class Leads Grails Crush"
 date:   2014-10-20 18:30:46
 categories: work
+shortcut: I was having a vacation in Edinburgh for couple of days. When I came back...
 ---
 I was having a vacation in Edinburgh for couple of days. When I came back, some code of the server has been updated by my colleagues. 
 

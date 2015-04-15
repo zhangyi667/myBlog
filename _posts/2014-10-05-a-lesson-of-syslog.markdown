@@ -3,6 +3,7 @@ layout: post
 title:  "A lesson of Syslog"
 date:   2014-10-05 18:30:46
 categories: work
+shortcut: When re-factor the syslog module of my little project, crush happened...
 ---
 When re-factor the syslog module of my little project, crush happened. 
 

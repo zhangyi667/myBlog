@@ -3,6 +3,7 @@ layout: post
 title:  "How to Join table in grails"
 date:   2014-04-08 08:30:46
 categories: work
+shortcut: In Grails, building a many-to-many relationship between two objects is simple, for example...
 ---
 In Grails, building a many-to-many relationship between two objects is simple, for exmaple, if we are binding objects Person and Job, what we do is to:
 

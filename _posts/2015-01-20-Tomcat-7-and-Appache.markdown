@@ -3,6 +3,7 @@ layout: post
 title:  "Tomcat 7, Appache and Windows 2012"
 date:   2015-01-20 18:30:46
 categories: work
+shortcut: This is my colleague’s experience. Let’s call him J...
 ---
 This is my colleague’s experience. Let’s call him J. 
 

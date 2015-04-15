@@ -3,6 +3,7 @@ layout: post
 title:  "Filter Pattern"
 date:   2015-01-23 18:30:46
 categories: work
+shortcut: his pattern is applied in a BUG-Fixing job. In the previous...
 ---
 This pattern is applied in a BUG-Fixing job. In the previous version of our software, our server queries an LDAP server to retrieve all DISABLED users, which gives back an iterator that used to, of course, iterates all the DISABLED users.
 

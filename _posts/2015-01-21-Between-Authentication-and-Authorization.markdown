@@ -3,9 +3,10 @@ layout: post
 title:  "Between Authorization and Authentication"
 date:   2015-01-21 18:30:46
 categories: work
+shortcut: What's the difference between these two words?
 ---
 
-What's the different?
+What's the difference?
 
 Authentication answers this question: "How can you prove that you are you?" Normally it's handled by password. 
 
