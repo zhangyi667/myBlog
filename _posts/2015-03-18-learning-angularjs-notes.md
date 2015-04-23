@@ -26,7 +26,7 @@ I have been learning AngularJs these days and here are some tips that I have lea
 `restrict = "AEMC" `(means attribute, element, comment and class respectively) defines how the directive can be used.
 
 
-angular has a provider $templateCache, which can cache something you want it to cache,
+Angular has a provider `$templateCache`, which can cache something you want it to cache,
 e.g.
 
 {{% highlight javascript %}}

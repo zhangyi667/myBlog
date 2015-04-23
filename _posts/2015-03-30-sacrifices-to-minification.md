@@ -24,9 +24,9 @@ Why do I have to declare the params twice? And if you have a test, in fact, it i
 
 {{% endhighlight %}}
 
-The key is the $inject. What is it?
+The key is the `$inject`. What is it?
 
-Well, the reason that $inject exists is to avoid problems when doing minification. As quoted in the [official tutorial][tutorial]:
+Well, the reason that `$inject`exists is to avoid problems when doing minification. As quoted in the [official tutorial][tutorial]:
 
 `Since Angular infers the controller's dependencies from the names of arguments to the controller's constructor function, if you were to minify the JavaScript code for PhoneListCtrl controller, all of its function arguments would be minified as well, and the dependency injector would not be able to identify services correctly.`
 

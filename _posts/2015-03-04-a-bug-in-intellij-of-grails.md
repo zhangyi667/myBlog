@@ -12,4 +12,4 @@ When doing grails project with version 2.3.x and above in Intellij with version 
 	    run: false
 	]
 {% endhighlight%}
-or, if using intellij 13 and above, comment the lines started with run and test
+or, if using intellij 13 and above, comment the lines started with `run` and `test`.
