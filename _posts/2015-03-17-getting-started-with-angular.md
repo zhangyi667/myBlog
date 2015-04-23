@@ -51,40 +51,21 @@ Note: Variables with `$` as prefix are angularJs built-in services. To know how 
 
 In another file, in this case controller.js, let's declare a controller.
 
-{{% highlight javascript %}}
+  {{% highlight javascript %}}
 
-  var bookStoreCtrl = angular.module('bookStoreControllers', [])
+    var bookStoreCtrl = angular.module('bookStoreControllers', [])
 
-  //this declares that the module is “bookstoreControllers”, which must be the same to the one declared in app.js
+    //this declares that the module is “bookstoreControllers”, which must be the same to the one declared in app.js
 
-  bookStoreCtrl.controller('BookDetailCtrl', ['$scope', '$routeParams', 'Book',
-    function($scope, $routeParams, book) {
-      $scope.book = {name:”some name”, author: “somebody”};
-  }]);
+    bookStoreCtrl.controller('BookDetailCtrl', ['$scope', '$routeParams', 'Book',
+      function($scope, $routeParams, book) {
+        $scope.book = {name:”some name”, author: “somebody”};
+    }]);
 
-{{% endhighlight %}}
+  {{% endhighlight %}}
 
 In the config it wraps `“BookDetailCtrl”` and `“book-detail.html”`, so in book-detail.html we can use whatever has been defined in BookDetailCtrl.
 
-For example, if the html goes like: 
-
-...
-
-	<h1>{{book.name}}</h1>
-
-  <h2>{{book.author}}</h2>
-
-...
-
-Then what the browser would get is :
-
-...
-
-	<h1>some name</h1>
-
-  <h2>somebody</h2>
-
-...
 
 And so far that’s what you need to take care when bootstrapping from the angularJs.
 

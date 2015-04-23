@@ -26,13 +26,13 @@ Angular listens to the `"DOMContentLoaded event"`(which is fired when the docume
 
 2. ####2, Manuallly start:
 
- If you do not add an "ng-app" element, or you need to have more control over the initialization process, what you can do is:
+If you do not add an "ng-app" element, or you need to have more control over the initialization process, what you can do is:
 
- 	1, in html file, declare controller.
+1, in html file, declare controller.
 
- 	2, in js file, create module of the app and bind the controller.
+2, in js file, create module of the app and bind the controller.
 
- 	3, call `bootstrap()` method and pass the module as a param into it.
+3, call `bootstrap()` method and pass the module as a param into it.
 
 {{% highlight javascript %}}
 	angular.element(document).ready(funciton(){
