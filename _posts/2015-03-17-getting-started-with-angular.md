@@ -15,34 +15,36 @@ The way to register a module in a project is like:
 
 {{% highlight javascript %}}
 
-  //....
-  angular.module(‘someModule’,[‘service1’, ‘service2’, ‘service3’]);
-  //...
-  //‘ServiceX’ is the service that this module depends on. When angular is doing the compilation, it inject those services into the module so this module can call them.
+    //....
 
-  //In this case:
+    angular.module(‘someModule’,[‘service1’, ‘service2’, ‘service3’]);
+    //...
 
-  var bookStoreApp = angular.module(‘bookStoreApp’, [
-    'ngRoute',
-    'bookStoreControllers',
-    'bookStoreFilters',
-    'bookStoreServices'
-  ]);
+    //‘ServiceX’ is the service that this module depends on. When angular is doing the compilation, it inject those services into the module so this module can call them.
 
-  //Then, define the route strategy in config:
+    //In this case:
 
-  bookStoreApp.config(['$routeProvider',
-    function($routeProvider) {
-      $routeProvider
-  .when('/books/:bookId', {
-          templateUrl: 'partials/book-detail.html',
-          controller: 'bookDetailCtrl'
-        })
-  .otherwise({
-          redirectTo: '/books/1'
-        });
-    }]
-  );
+    var bookStoreApp = angular.module(‘bookStoreApp’, [
+      'ngRoute',
+      'bookStoreControllers',
+      'bookStoreFilters',
+      'bookStoreServices'
+    ]);
+
+    //Then, define the route strategy in config:
+
+    bookStoreApp.config(['$routeProvider',
+      function($routeProvider) {
+        $routeProvider
+    .when('/books/:bookId', {
+            templateUrl: 'partials/book-detail.html',
+            controller: 'bookDetailCtrl'
+          })
+    .otherwise({
+            redirectTo: '/books/1'
+          });
+      }]
+    );
 {{% endhighlight %}}
 
 Note: Variables with `$` as prefix are angularJs built-in services. To know how they can be used, see the API document. The configuration defines a simple and basic route strategy that shows different html files with different controllers. So the next step is to create controllers.
@@ -70,7 +72,7 @@ For example, if the html goes like:
 
 	<h1>{{book.name}}</h1>
 
-  <p>{{book.author}}</p>
+  <h2>{{book.author}}</h2>
 
 ...
 
@@ -80,7 +82,7 @@ Then what the browser would get is :
 
 	<h1>some name</h1>
 
-  <p>somebody</p>
+  <h2>somebody</h2>
 
 ...
 
@@ -100,7 +102,7 @@ P.S. little tips
 
 6. 6,The compile() method is also in return closure. The return closure of compile will overwrite link function, because the return closure of compile() is link().
 
-7. 7,You cannot use scope in compile process, because the scope has not been binded with elements until the link process 
+7. 7,You cannot use scope in compile process, because the scope has not been binded with elements until the link process. 
 
 
 [docs]:https://docs.angularjs.org/guide/directive#normalization

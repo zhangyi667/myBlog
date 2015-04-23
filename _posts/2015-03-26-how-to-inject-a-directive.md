@@ -35,5 +35,6 @@ To inject an element with some directive all you need to do is:
 {{% endhighlight %}}
 
 And that’s how it works.
-To see a complete example [poke me][wxample]
+To see a complete example [poke me][example]
+
 [example]: http://jsfiddle.net/6n7xk/

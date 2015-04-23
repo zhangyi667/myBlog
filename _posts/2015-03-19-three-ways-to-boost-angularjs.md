@@ -66,7 +66,7 @@ Details of how the angular bootstrap:
 
 The `bindJquery()` method binds to jquery if present, else binds to JQLite, the lite version of Jquery, so that angular js can use the elementory functions of jquery.
 
-The publishExternalAPI() does such jobs:
+The `publishExternalAPI()` does such jobs:
 
 1. 1,Initialize angularModule, which is basically an injector. Until in this step, the angular registers its module
 2. 2,Inject default providers
