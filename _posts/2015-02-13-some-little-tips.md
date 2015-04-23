@@ -32,3 +32,14 @@ Extjs has a few methods to loop an Array, which are quite similar yet still have
 
 `reduceRight()`: like reduce, but works in descending rather than ascending order
 
+4. d, The way grails to avoid the xss attack:
+{% highlight javascript%}
+<g:encodeAs codec="HTML"> 
+ ${a.token.description}
+</g:encodeAs>
+{%endhighlight%}
+
+encode the content as html so that the browser will render it instead of judging it as javascript.
+
+5. e, `<meta content="width=device-width, initial-scale=1.0" name="viewport"/>`
+This sentence in html file tells browser to adjust width just to comply with the screen width.
