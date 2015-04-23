@@ -6,7 +6,7 @@ categories: work
 shortcut: ....
 ---
 
-1. Automatically initialization
+1. ####Automatically initialization
 
 Angular listens to the `"DOMContentLoaded event"`(which is fired when the document has been completely loaded and parsed, without waiting for stylesheets, images, and subframes to finish loading). When this event fires, Angular looks for the ng-app directive which designates your application root.
  <html ng-app='MyModule'>
@@ -23,7 +23,7 @@ Angular listens to the `"DOMContentLoaded event"`(which is fired when the docume
 
 
 
-2. manuallly start:
+2. ####manuallly start:
 
  If you do not add an "ng-app" element, or you need to have more control over the initialization process, what you can do is:
  	1, in html file, declare controller.
@@ -32,14 +32,16 @@ Angular listens to the `"DOMContentLoaded event"`(which is fired when the docume
  	3, call bootstrap() method and pass the module as a param into it.
 
 {{% highlight javascript%}}
-angular.element(document).ready(funciton(){
+	angular.element(document).ready(funciton(){
 	
 	angular.bootstrap(document,['MyModule']);
 
 });
 {{% enghighlight %}}
 
-3. in one .html file there can be multiple "ng-app" elements, as long as they are not nested angularjs would find the first ng-app and start the corresponding module, as for the others you should bootstrap it using the 2nd way.
+3. ####combination:
+
+In one .html file there can be multiple "ng-app" elements, as long as they are not nested angularjs would find the first ng-app and start the corresponding module, as for the others you should bootstrap it using the 2nd way.
 This is not common. Do Not bind multiple modules in one page
 
 Details of how the angular bootstrap:
@@ -49,11 +51,11 @@ Details of how the angular bootstrap:
  The js file is a big self execution anonymous function, which creates most of the functions and in the end calls some important functions to bootstrap:
 
 {{% highlight javascript%}}
- bindJQuery();
+ 	bindJQuery();
 
- publishExternalAPI(angular);
+ 	publishExternalAPI(angular);
 
-  jqLite(document).ready(function() {
+  	jqLite(document).ready(function() {
     angularInit(document, bootstrap);
   });
 {{% endhighlight %}}

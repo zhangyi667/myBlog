@@ -14,15 +14,15 @@ The server did start, and I opened the web-application and tried to log in. This
 So I set breakpoint to see what happened. Just to find that, issue happened when the EnumClassA called the method 'valueOf()', which requested params. And not surprisingly, the params was empty. Reason's been found. It's not "No enum class something", it was "Encountered issues when get the value of the enum class".
 
 {% highlight Java %}
-public static <T extends Enum<T>> T valueOf(Class<T> enumType, String name) {
-        T result = enumType.enumConstantDirectory().get(name);
-        if (result != null)
-            return result;
-        if (name == null)
-            throw new NullPointerException("Name is null");
-        throw new IllegalArgumentException(
-            "No enum const " + enumType +"." + name);
-    }
+	public static <T extends Enum<T>> T valueOf(Class<T> enumType, String name) {
+	        T result = enumType.enumConstantDirectory().get(name);
+	        if (result != null)
+	            return result;
+	        if (name == null)
+	            throw new NullPointerException("Name is null");
+	        throw new IllegalArgumentException(
+	            "No enum const " + enumType +"." + name);
+	    }
 {% endhighlight %}
 
 The code explain everything. It threw “No enum const” message as long as the result is null. What a misleading exception.

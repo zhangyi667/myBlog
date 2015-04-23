@@ -7,19 +7,21 @@ shortcut: Taking the first sight of angularJs, you might think ....
 ---
 Taking the first sight of angularJs, you might think it is strange to declare a controller in the way, which in the official tutorial is like:
 {{% highlight javascript %}}
-phonecatApp.controller('PhoneListCtrl', ['$scope', '$http',
-function($scope, $http) {
-	// here goes your code
-}]);
+	phonecatApp.controller('PhoneListCtrl', ['$scope', '$http',
+	function($scope, $http) {
+		// here goes your code
+	}]);
 
-{{% enghighlight %}}
+{{% endhighlight %}}
+
 Why do I have to declare the params twice? And if you have a test, in fact, it is the same with the following code:
 {{% highlight javascript %}}
-function PhoneListCtrl($scope, $http) {
-	//here goes your code
-}
-PhoneListCtrl.$inject = ['$scope', '$http'];
-phonecatApp.controller('PhoneListCtrl', PhoneListCtrl);
+	function PhoneListCtrl($scope, $http) {
+		//here goes your code
+	}
+	PhoneListCtrl.$inject = ['$scope', '$http'];
+	phonecatApp.controller('PhoneListCtrl', PhoneListCtrl);
+
 {{% endhighlight %}}
 
 The key is the $inject. What is it?

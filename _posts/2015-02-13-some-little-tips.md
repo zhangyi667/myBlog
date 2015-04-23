@@ -34,9 +34,9 @@ Extjs has a few methods to loop an Array, which are quite similar yet still have
 
 4. d, The way grails to avoid the xss attack:
 {% highlight javascript%}
-<g:encodeAs codec="HTML"> 
- ${a.token.description}
-</g:encodeAs>
+	<g:encodeAs codec="HTML"> 
+	 ${a.token.description}
+	</g:encodeAs>
 {%endhighlight%}
 
 encode the content as html so that the browser will render it instead of judging it as javascript.

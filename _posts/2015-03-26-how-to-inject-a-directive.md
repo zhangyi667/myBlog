@@ -13,15 +13,19 @@ But what I expected was that Angular could self-inject the directive so all I ne
 
 In fact, AngularJs has an injector mechanism which provides you such function to solve my problem.
 To inject an element with some directive all you need to do is:
-{{% highlight javascript%}}
-//find the injector
+{{% highlight javascript %}}
+	//find the injector
 
-var $injector = angular.element(document.querySelector('#container')).injector();
+	var $injector = angular.element(document.querySelector('#container')).injector();
 
-//element is the target dom that you want to inject to
+	//element is the target dom that you want to inject to
 
     var element = angular.element(document.querySelector('[name="Dusty"]'));
-//let $compile do the inject thing    
+{{% endhighlight %}}
+
+{{% highlight javascript %}}
+
+	//let $compile do the inject thing    
 
     $injector.invoke(function ($compile) {    
         var scope = element.scope();
@@ -31,5 +35,5 @@ var $injector = angular.element(document.querySelector('#container')).injector()
 {{% endhighlight %}}
 
 And that’s how it works.
-To see a complete example [[poke me]][wxample]
+To see a complete example [poke me][wxample]
 [example]: http://jsfiddle.net/6n7xk/

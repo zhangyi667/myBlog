@@ -16,10 +16,10 @@ In the manifest file we can define when the extension will be called. It can wak
 
 In the manifest file, there is:
  {% highlight Java %}
- "browser_action": {
-    "default_icon": "icon.png",
-    "default_popup": "popup.html"
-  },
+	 "browser_action": {
+	    "default_icon": "icon.png",
+	    "default_popup": "popup.html"
+	  },
  {% endhighlight %}
 this means when you click the icon button, you want to show some UI to the user. 
 `"default_icon" `means the icon file you are using, and `"default_popup"` means the html file that you are building for the UI.
