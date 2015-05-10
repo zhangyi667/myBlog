@@ -24,8 +24,8 @@ Command “tee” receives standard input and output it to standard output devic
 
 Command “sysctl” is to configure kernel parameters at runtime, which executes the sysctl.conf file as default. 
 
-So this command means, first append a sentence “fs.inotify.max_user_watches=524288” in file sysctl.config, and re-configure kernel parameters according to the sysctl.config file.
+So this command means, first append a sentence `fs.inotify.max_user_watches=524288` in file sysctl.config, and re-configure kernel parameters according to the sysctl.config file.
 
-[firtS]:http://stackoverflow.com/questions/22285942/grunt-throw-recursive-process-nexttick-detected
+[firstS]:http://stackoverflow.com/questions/22285942/grunt-throw-recursive-process-nexttick-detected
 [secondS]:http://stackoverflow.com/questions/22644709/warning-recursive-process-nexttick-detected
 [group]:https://github.com/yeoman/generator-webapp/issues/396

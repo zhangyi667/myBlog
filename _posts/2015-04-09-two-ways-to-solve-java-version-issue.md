@@ -34,16 +34,16 @@ The key to this problem is that it was not a conflict. In fact there are many wa
 
 1, Taking a glance at linux desktop files, which is something like:
 
-`[Desktop Entry]
-Name=IntelliJ14
-Comment=
-Exec=env -u XMODIFIERS JAVA_HOME=/usr/java/jdk1.7.0_40 /home/idea-IU-139.659.2/bin/idea.sh
-Icon=/home/idea-IU-139.659.2/bin/idea.png
-Terminal=false
-Type=Application
-Encoding=UTF-8
-Categories=Development;
-`
+	`[Desktop Entry]
+	Name=IntelliJ14
+	Comment=
+	Exec=env -u XMODIFIERS JAVA_HOME=/usr/java/jdk1.7.0_40 /home/idea-IU-139.659.2/bin/idea.sh
+	Icon=/home/idea-IU-139.659.2/bin/idea.png
+	Terminal=false
+	Type=Application
+	Encoding=UTF-8
+	Categories=Development;
+	`
 
 The rest are not important, take care of “Exec”, which is the bash command to boot the process.
 

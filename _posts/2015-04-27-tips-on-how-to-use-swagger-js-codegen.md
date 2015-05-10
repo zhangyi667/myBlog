@@ -62,4 +62,5 @@ Finally, if you want to use it, like in your controller, you have to include and
 	var user = new UserService();
 	...
 {{endhighlight}}
+
 [codegen]:https://github.com/wcandillon/swagger-js-codegen
