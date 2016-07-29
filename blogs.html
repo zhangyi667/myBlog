@@ -12,6 +12,9 @@ permalink: /blog/
 
         <h2>
           <a class="post-link" href="{{ post.url | prepend: site.url }}">{{ post.title }}</a>
+          {% if post.img_url %}
+          <img src="{{ post.img_url }}" width="80%">
+          {% endif %}
           <p class="shortcut">{{ post.shortcut}}</p>
         </h2>
       </li>
