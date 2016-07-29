@@ -3,7 +3,6 @@ layout: post
 title:  "1 Trick to hack mybatis SQl weakness"
 date:   2016-04-27 18:30:46
 categories: work
-img_url: http://oa1f2pgjm.bkt.clouddn.com/blog/IMG_3207%20%282%29_%E5%89%AF%E6%9C%AC.jpg
 shortcut: This article explains how to sort your SQL result by field...
 ---
 Mybatis sucks. It does not work 100% with SQl, or MYSQL, or any standard SQL language you can imagine, but sometimes you have to code with it since the project you handed from your former co-worker is not owned by you.
