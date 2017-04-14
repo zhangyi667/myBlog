@@ -29,11 +29,10 @@ But bad code is bad code. You can’t change that.
 There are some kinds of bad code. If you have written code like this, you should review yourself as code.
 
 
-- "What the hell do you want to do?"
+1, "What the hell do you want to do?"
 
 {{% highlight javascript %}}
 	public void sendEmail(String message, String email) {
-		// if send failed, retry.
 		for (int i = 0; i < 100; i++) {
 			if (!send(message, email)) {
 				i++;
@@ -46,7 +45,7 @@ There are some kinds of bad code. If you have written code like this, you should
 
 For who have written this, please change another job.
 
-- "Can you do it more complex?"
+2, "Can you do it more complex?"
 
 This kind of code runs well, but it will take you days to figure out how it works.
 
@@ -74,4 +73,42 @@ This kind of code runs well, but it will take you days to figure out how it work
 	}
 {{% endhighlight %}}
 
-What's wrong with this code? First, as a method, it should be simple, only do one thing at a time. Look at this method. It verifies the path, gets conf according to serverUrl, and does backup before returning results. And believe it or not, the variable "ncfs" means "numbers of copied files in all servers". Some programmers love writing shortcuts, even it affects readability. Is this really for human?
+What's wrong with this code? First, as a method, it should be simple, only do one thing at a time. Look at this method. It verifies the path, gets conf according to serverUrl, and does backup before returning results. And believe it or not, the variable "ncfs" means "numbers of copied files in all servers". Some programmers love writing shortcuts, even it affects readability.
+
+Is this really for human?
+
+Just a few minutes work it could be more readable: 
+
+{{% highlight javascript %}}
+	public boolean fileReadable(String path, String serverUrl) {
+		if (path == null) return false;
+		FileConfigure conf = getConfFromServerURL();
+		String newPath = verifyPath(path);
+		int ncfs = conf.findFile(path);
+		if (ncfs < 1) return false;
+		else if (ncfs == 1) {
+			otherASyncThreadDoBackupFiles(path);
+		}
+		return true;
+	}
+
+	private FileConfigure getConfFromServerURL(String serverUrl) {
+		FileConfigure conf;
+		if (serverurl.startsWith('xxx') || serverUrl.indexOf("backup") != -1) {
+			conf = new ServerAConfigure();
+		} else {
+			conf = new ServerConfigure();
+		}
+		return conf;
+	}
+
+	private String verifyPath(String path) {
+		if (path.charAt(path.length() - 1) == '/' || path.charAt(path.length() - 1) == ';' || path.charAt(path.length() - 1) == '..') {
+			return path.substring(0, path.length() - 1);
+		}
+		return path;
+	}
+
+{{% endhighlight %}}
+
+Yet it is still not good code, which I'll explain in next article.
