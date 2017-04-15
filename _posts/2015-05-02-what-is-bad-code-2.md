@@ -52,3 +52,5 @@ On developer side, refactor is the most complex thing to do. I've been into a fe
 On project manger side, what makes refactor disgusting is, it is almost impossible to evaluate time. You know last time it took one hour to refactor 1000 lines of code, but you can't tell this time how long it takes to refactor 5000 lines of code. 3 days, 5 days, or even a week. Moreover, the benefit of refactor is nearly zero at the moment.
 
 On your boss side, it takes that much time, that many developers, to do something that he does not understand but looks like it doesn't change anything, except it enrolls more bugs. It is very hard for him to tell it is NOT a waste of time.
+
+To be continue....
