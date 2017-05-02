@@ -50,11 +50,11 @@ It was until something went wrong and you couldn’t locate error that you reali
 
 From my experience, there are some standards of log. When you review your code, please remind yourself if :
 
-* The log records much enough. Exception, external call, the input, the output and all the key variables.
+* _The log records much enough. Exception, external call, the input, the output and all the key variables._
 
-* The log contains enough info, which includes context, as well as the return value of all external methods. And also some id words that helps distinguish itself from others.
+* _The log contains enough info, which includes context, as well as the return value of all external methods. And also some id words that helps distinguish itself from others._
 
-* Since you can set log level as info/debug/error before publish your system, so the number of logs is not that important. As long as the log codes are not too much to affect transaction codes, all are acceptable.
+* _Since you can set log level as info/debug/error before publish your system, so the number of logs is not that important. As long as the log codes are not too much to affect transaction codes, all are acceptable._
 
 After designed the monitor module, the architecture looks like:
 
@@ -77,3 +77,16 @@ The last step we segregated read and write databases. 6 for read and 2 for write
 After implemented Database cluster, the architecture looks like:
 
 <img src="http://oa1f2pgjm.bkt.clouddn.com/blog/e-commerce-3.png" width="80%">
+
+##### Photo: From photo server to cloud server
+The e-commerce website requires a large demand of photo service, where sellers can upload the product photos. In the beginning we developed a resource server which was basically a photo server.  Not long later it became the bottleneck because when user uploaded pictures, it requests api servers and waits for response, which includes I/O read and write so it was very slow. 
+
+Then we analysed the demand of pictures and tried to make a change.
+
+We found that when sellers uploading pictures, as long as they’re sure the pictures has been uploaded, they can accept a little bit delay. Thus we improved the way to upload picture to implement asynchronous operation. When user uploads pictures, we add them into a queue and return. Another service, picture handler listens to this queue, and uploads them to a third party cdn service. When uploads succeeds, it updates the database, else send error message to that user. From user side, when he uploads pictures, he sees the response from server immediately and after a few seconds he can see them in the product page, or if the uploading failed, he saw error messages.  Moreover, since only sellers can upload pictures, we added the limit that for one product sellers can only upload or modifies the pictures every certain time, to reduce the requests to api server.
+
+After segregate photo service from api service, it looks like:
+
+<img src="http://oa1f2pgjm.bkt.clouddn.com/blog/ecommerce-system.png" width="80%">
+
+Only until you jump into it did you realise how much to consider when it comes to architecture. There's no certain types, all you need to do is to decide the best way to solve the problem based to the very certain case. This is a long way to go, and I'm happy with it.
