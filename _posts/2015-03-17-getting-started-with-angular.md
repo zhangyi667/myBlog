@@ -13,13 +13,56 @@ The first file we’re gonna see is the `“app.js”`, whose name is convention
 
 The way to register a module in a project is like:
 
+```javascript
 
+    //....
+
+    angular.module(‘someModule’,[‘service1’, ‘service2’, ‘service3’]);
+    //...
+
+    //‘ServiceX’ is the service that this module depends on. When angular is doing the compilation, it inject those services into the module so this module can call them.
+
+    //In this case:
+
+    var bookStoreApp = angular.module(‘bookStoreApp’, [
+      'ngRoute',
+      'bookStoreControllers',
+      'bookStoreFilters',
+      'bookStoreServices'
+    ]);
+
+    //Then, define the route strategy in config:
+
+    bookStoreApp.config(['$routeProvider',
+      function($routeProvider) {
+        $routeProvider
+    .when('/books/:bookId', {
+            templateUrl: 'partials/book-detail.html',
+            controller: 'bookDetailCtrl'
+          })
+    .otherwise({
+            redirectTo: '/books/1'
+          });
+      }]
+    );
+```
 
 Note: Variables with `$` as prefix are angularJs built-in services. To know how they can be used, see the API document. The configuration defines a simple and basic route strategy that shows different html files with different controllers. So the next step is to create controllers.
 
 In another file, in this case controller.js, let's declare a controller.
 
- 
+```javascript
+
+    var bookStoreCtrl = angular.module('bookStoreControllers', [])
+
+    //this declares that the module is “bookstoreControllers”, which must be the same to the one declared in app.js
+
+    bookStoreCtrl.controller('BookDetailCtrl', ['$scope', '$routeParams', 'Book',
+      function($scope, $routeParams, book) {
+        $scope.book = {name:”some name”, author: “somebody”};
+    }]);
+
+```
 
 In the config it wraps `“BookDetailCtrl”` and `“book-detail.html”`, so in book-detail.html we can use whatever has been defined in BookDetailCtrl.
 
