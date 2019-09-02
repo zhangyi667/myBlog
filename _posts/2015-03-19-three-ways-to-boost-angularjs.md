@@ -34,13 +34,13 @@ If you do not add an "ng-app" element, or you need to have more control over the
 
 3, call `bootstrap()` method and pass the module as a param into it.
 
-{{% highlight javascript %}}
+```javascript
 	angular.element(document).ready(funciton(){
 	
 	angular.bootstrap(document,['MyModule']);
 
 	});
-{{% endhighlight %}}
+```
 
 3. ####3, Combination:
 
@@ -53,7 +53,7 @@ Details of how the angular bootstrap:
 
  The js file is a big self execution anonymous function, which creates most of the functions and in the end calls some important functions to bootstrap:
 
-{{% highlight javascript%}}
+```javascript
  	bindJQuery();
 
  	publishExternalAPI(angular);
@@ -62,7 +62,7 @@ Details of how the angular bootstrap:
     	angularInit(document, bootstrap);
   	});
 
-{{% endhighlight %}}
+```
 
 The `bindJquery()` method binds to jquery if present, else binds to JQLite, the lite version of Jquery, so that angular js can use the elementory functions of jquery.
 
