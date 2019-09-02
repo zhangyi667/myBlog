@@ -6,7 +6,7 @@ categories: work
 shortcut: I have been learning AngularJs these days.....
 ---
 I have been learning AngularJs these days and here are some tips that I have learned.
-{{% highlight javascript %}}
+```javascript
 	//angular Js directive,
 	//directive returns a config, of which the common variables are "restrict", "template", "templateUrl","replace", "transclude", "link"
 
@@ -22,14 +22,14 @@ I have been learning AngularJs these days and here are some tips that I have lea
 		}
 	})
 
-{{% endhighlight %}}
+```
 `restrict = "AEMC" `(means attribute, element, comment and class respectively) defines how the directive can be used.
 
 
 Angular has a provider `$templateCache`, which can cache something you want it to cache,
 e.g.
 
-{{% highlight javascript %}}
+```javascript
 	//when the injector has loaded all the modules
 	myModule.run(function($templateCache){
 		$templateCache.put("hello.html", '<div>Hello</hello>');
@@ -69,4 +69,4 @@ e.g.
 		scope:{},
 		...
 	}
-{{% endhighlight %}}
+```
